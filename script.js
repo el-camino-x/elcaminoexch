@@ -1,4 +1,3 @@
-// ======= Ambil elemen =======
 const dollarInput = document.getElementById('dollar');
 const convertBtn = document.getElementById('convert');
 const resultSpan = document.getElementById('result');
@@ -53,4 +52,13 @@ convertBtn.addEventListener('click', () => {
 
     const hasil = currentRate * dollar;
     resultSpan.textContent = hasil.toLocaleString('id-ID');
+});
+
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', function(e) {
+    if(e.key === 'F12' || 
+       (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+       (e.metaKey && e.altKey && e.key === 'I')) {
+        e.preventDefault();
+    }
 });
