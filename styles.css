@@ -210,8 +210,8 @@ h1 {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: clamp(2rem, 12vw, 4rem);
-        margin-bottom: 0.3rem;
+        font-size: clamp(1.5rem, 9vw, 2.8rem);
+        margin-bottom: 0.25rem;
     }
 
     .tagline {
@@ -272,8 +272,8 @@ h1 {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: clamp(2.5rem, 8vw, 4.5rem);
-        margin-bottom: 0.35rem;
+        font-size: clamp(2rem, 6.5vw, 3.5rem);
+        margin-bottom: 0.3rem;
     }
 
     .tagline {
@@ -335,8 +335,8 @@ h1 {
 
 @media (max-width: 1024px) {
     h1 {
-        font-size: clamp(3rem, 6vw, 5rem);
-        margin-bottom: 0.4rem;
+        font-size: clamp(2.5rem, 5.5vw, 4rem);
+        margin-bottom: 0.35rem;
     }
 
     .tagline {
@@ -395,3 +395,82 @@ h1 {
         margin-bottom: 1rem;
     }
 }
+
+
+.content {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeInContainer 1s ease-out forwards;
+}
+
+.content > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInItem 0.8s ease-out forwards;
+}
+
+.content > *:nth-child(1) { animation-delay: 0.2s; }
+.content > *:nth-child(2) { animation-delay: 0.35s; }
+.content > *:nth-child(3) { animation-delay: 0.5s; }
+.content > *:nth-child(4) { animation-delay: 0.65s; }
+.content > *:nth-child(5) { animation-delay: 0.8s; } 
+
+@keyframes fadeInContainer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInItem {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calculator {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    animation: fadeInCalculator 1s ease-out forwards;
+    animation-delay: 0.9s; 
+}
+
+@keyframes fadeInCalculator {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.contact-bubbles {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeInBubbles 1s ease-out forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes fadeInBubbles {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.disclaimer {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeInDisclaimer 1s ease-out forwards;
+    animation-delay: 1.4s; 
+}
+
+@keyframes fadeInDisclaimer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+will-change: transform;
+backface-visibility: hidden;
+
