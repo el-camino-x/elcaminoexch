@@ -9,31 +9,25 @@ let currentRate = null; // akan diupdate dari Google Sheet
 
 // ======= Fetch RATE & LAST UPDATED dari Google Sheet CSV =======
 fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRIefvbp0yDlYWWzhw-gnVjKgyh0GvADomMb_0yqhXpArd-29mVfVNWdHACI8kJ9TtPd1LBTOVW7YEc/pub?output=csv')
-    .then(res => res.text())
+  .then(res => res.text())
   .then(csvText => {
       const lines = csvText.trim().split('\n');
-
-      // headers
       const headers = lines[0].split(',');
-
-      // values
       const values = lines[1].split(',');
 
+      // cari index kolom Rate & LastUpdated
       const rateIndex = headers.findIndex(h => h.toLowerCase() === 'rate');
       const lastUpdatedIndex = headers.findIndex(h => h.toLowerCase() === 'lastupdated');
 
-      // Ambil rate
-      currentRate = parseFloat(values[rateIndex].replace(/,/g, ''));
+      // ambil langsung isi cell (hilangkan tanda kutip, trim spasi)
+      const rateValue = values[rateIndex]?.replace(/"/g,'').trim() || '-';
+      const lastUpdatedValue = values[lastUpdatedIndex]?.replace(/"/g,'').trim() || '-';
 
-      // Ambil last updated, hapus tanda kutip, trim spasi, fallback '-'
-      const lastUpdated = values[lastUpdatedIndex]?.replace(/"/g,'').trim() || '-';
-
-      // Update tampilan
-      rateDiv.textContent = `RATE : Rp${currentRate.toLocaleString('id-ID')}`;
-      lastUpdatedDiv.textContent = `Last Updated : ${lastUpdated}`;
+      rateDiv.textContent = `RATE : Rp${parseFloat(rateValue).toLocaleString('id-ID')}`;
+      lastUpdatedDiv.textContent = `Last Updated : ${lastUpdatedValue}`;
   })
   .catch(err => {
-      console.error(err);
+      console.error('Gagal fetch Google Sheet CSV:', err);
       rateDiv.textContent = 'RATE : -';
       lastUpdatedDiv.textContent = 'Last Updated : -';
   });
