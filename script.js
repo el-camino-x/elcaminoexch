@@ -33,6 +33,7 @@ fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRIefvbp0yDlYWWzhw-gnVjKg
   });
 
 
+
 // ======= Kalkulator =======
 convertBtn.addEventListener('click', () => {
     if(currentRate === null) {
