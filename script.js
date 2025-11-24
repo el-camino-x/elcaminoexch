@@ -4,7 +4,7 @@ const resultSpan = document.getElementById('result');
 const rateDiv = document.querySelector('.rate');
 const lastUpdatedDiv = document.querySelector('.last-updated');
 
-let currentRate = null; 
+let currentRate = null;
 
 fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRIefvbp0yDlYWWzhw-gnVjKgyh0GvADomMb_0yqhXpArd-29mVfVNWdHACI8kJ9TtPd1LBTOVW7YEc/pub?output=csv')
   .then(res => res.text())
@@ -19,8 +19,8 @@ fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRIefvbp0yDlYWWzhw-gnVjKg
       const rateValue = values[rateIndex]?.replace(/"/g,'').trim() || '-';
       const lastUpdatedValue = values[lastUpdatedIndex]?.replace(/"/g,'').trim() || '-';
 
-      currentRate = parseFloat(rateValue.replace(/,/g,'')); 
-    
+      currentRate = parseFloat(rateValue.replace(/,/g,''));
+
       rateDiv.textContent = `RATE : Rp${currentRate.toLocaleString('id-ID')}`;
       lastUpdatedDiv.textContent = `Last Updated : ${lastUpdatedValue}`;
   })
