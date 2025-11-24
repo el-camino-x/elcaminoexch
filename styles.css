@@ -209,13 +209,10 @@ h1 {
 
 
 @media (max-width: 480px) {
-    .content h1 {
-    font-size: clamp(1rem, 8vw, 3rem); /* fleksibel tapi terbatas */
-    margin: 0 1rem; /* margin kiri-kanan tetap */
-    text-align: center;
-    word-wrap: break-word; /* jika kata terlalu panjang, pecah ke baris baru */
-    line-height: 1.2;
-}
+    h1 {
+        font-size: clamp(1.5rem, 7vw, 2.8rem);
+        margin-bottom: 0.25rem;
+    }
 
     .tagline {
         font-size: clamp(0.9rem, 5vw, 1.5rem);
