@@ -109,8 +109,8 @@ function showInspectWarning() {
 
     setTimeout(() => {
         overlay.style.opacity = 0;
-        setTimeout(() => overlay.style.display = "none", 300);
-    }, 3000);
+        setTimeout(() => overlay.style.display = "none", 200);
+    }, 500);
 }
 
 // block right click
