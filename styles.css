@@ -23,16 +23,23 @@
 
 
 h1 {
-    font-weight: 900;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+
+    /* Gradient putih → biru */
+    background: linear-gradient(180deg, #ffffff, #9cd7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Outline tipis */
+    -webkit-text-stroke: 0.8px #0a0a0a;
+
     font-size: clamp(3rem, 7vw, 5rem);
-    letter-spacing: 4px;
-    color: #ffffff;
-    -webkit-text-stroke: 3px #555555;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    white-space: nowrap;
     margin-bottom: 0.4rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
+
 
 .tagline {
     font-weight: 500;
@@ -473,4 +480,3 @@ h1 {
 
 will-change: transform;
 backface-visibility: hidden;
-
