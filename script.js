@@ -89,16 +89,22 @@ box.style.cssText = `
   background: #0a0f1d;
   padding: 15px 25px;
   border-radius: 12px;
-  text-align: center;
+  text-align: center;      
+  display: flex;          
+  flex-direction: column;
+  justify-content: center;    
+  align-items: center;    
   border: 1px solid rgba(0,150,255,0.3);
   box-shadow: 0 0 10px rgba(0,150,255,0.3);
   color: white;
   font-family: 'Poppins', sans-serif;
   width: 250px;
+  height: 100px;     
 `;
+
 box.innerHTML = `
   <h2 style="font-size:18px;margin-bottom:8px;color:#70c3ff;text-shadow:0 0 4px rgba(0,150,255,0.5);">⚠️ Warning!</h2>
-  <p style="font-size:13px;opacity:.85;margin-bottom:0;">Inspect element terdeteksi. Mohon tutup DevTools.</p>
+  <p style="font-size:13px;opacity:.85;margin-bottom:0;">Inspect element terdeteksi.</p>
 `;
 overlay.appendChild(box);
 
