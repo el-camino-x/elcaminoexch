@@ -23,15 +23,13 @@
 
 
 h1 {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Nabla', sans-serif;
     font-weight: 400;
 
-    /* Gradient putih → biru */
     background: linear-gradient(180deg, #ffffff, #9cd7ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    /* Outline tipis */
     -webkit-text-stroke: 0.8px #0a0a0a;
 
     font-size: clamp(3rem, 7vw, 5rem);
