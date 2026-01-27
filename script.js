@@ -62,10 +62,6 @@ convertBtn.addEventListener('click', () => {
   resultSpan.textContent = hasil.toLocaleString('id-ID');
 });
 
-/* ===========================
-   ANTI INSPECT + POPUP TIPIS
-   =========================== */
-
 const overlay = document.createElement("div");
 overlay.id = "inspectAlertOverlay";
 overlay.style.cssText = `
@@ -108,7 +104,6 @@ box.innerHTML = `
 `;
 overlay.appendChild(box);
 
-// fungsi tampil popup dengan fade
 function showInspectWarning() {
     overlay.style.display = "flex";
     overlay.style.opacity = 1;
@@ -119,13 +114,11 @@ function showInspectWarning() {
     }, 500);
 }
 
-// block right click
 document.addEventListener('contextmenu', (e) => {
   e.preventDefault();
   showInspectWarning();
 });
 
-// block shortcuts
 document.addEventListener('keydown', function (e) {
   if (
     e.key === 'F12' ||
@@ -138,7 +131,6 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-// detect DevTools
 (function() {
   const threshold = 160;
   setInterval(() => {
